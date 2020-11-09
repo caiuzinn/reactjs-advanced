@@ -4,13 +4,25 @@ import React, { useState } from 'react';
 
 const ShortCircuit = () => {
   const [text, setText] = useState('')
-  const firstValue = text || 'hello world'; // se o texto for falso o retorno do valor será o segundo, porém se for verdadeiro retornara o primiro
-  const secondValue = text && 'hello world'; //nesse caso o primeiro é retornado caso sejá falso, se for verdadeiro  o segundo é retornado 
+  const [isError, setIsError] = useState(false)
+  // const firstValue = text || 'hello world'; // se o texto for falso o retorno do valor será o segundo, porém se for verdadeiro retornara o primiro
+  // const secondValue = text && 'hello world'; //nesse caso o primeiro é retornado caso sejá falso, se for verdadeiro  o segundo é retornado 
 
   return (
     <>
-      <h1>{ firstValue} </h1>
-      <h1>Value: { secondValue} </h1>
+      {/* <h1>{ firstValue} </h1>
+      <h1>Value: { secondValue} </h1> */}
+      <h1>{text || 'Caio'}</h1>
+      <h1>{!text && 'Miranda'}</h1>
+      <button className='btn' onClick={() => setIsError(!isError)}>toggle error</button>
+      { isError && <h1>Error...</h1>}
+      {isError ? (
+        <p>There is an error</p>
+      ) : (
+          <div>
+            <h2>There is no Error</h2>
+          </div>
+      )}
     </>
   );
   
