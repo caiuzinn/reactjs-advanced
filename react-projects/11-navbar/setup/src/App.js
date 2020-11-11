@@ -1,9 +1,11 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar, { Navbar2 } from './Navbar'
+
 function App() {
   return (
     <>
-      <h2>navbar project setup</h2>
+      <Navbar />
+      {/* <Navbar2 /> */}
     </>
   )
 }
