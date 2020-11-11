@@ -4,7 +4,7 @@ import React from 'react'
 //import SetUp from './tutorial/1-useState/setup/1-error-example'
 
 //como fazer o useState
-import SetUp from './tutorial/3-conditional-rendering/setup/3-show-hide'
+import SetUp from './tutorial/4-forms/setup/2-multiple-inputs'
 
 function App() {
   return (
