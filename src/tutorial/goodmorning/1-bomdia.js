@@ -13,6 +13,7 @@ const UseStateCounter = () => {
     }, 2000)
   }
 
+  
   useEffect(() => {
     if (isStarted === true) {
       console.log(index)
