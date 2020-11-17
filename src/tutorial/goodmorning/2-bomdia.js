@@ -38,103 +38,29 @@ const GoodMorning2 = () => {
     }
   }
 
-  
+  const soletrando = (i) => {
+    setTimeout(() => {
+          // setValue(value + 1) é assincrono ele acaba nao alterando varios 
+      setText(value[0].bomDia.slice(0, i + 1));
+      setIndex(i + 1);
+    }, 1500)
+    
+  }
 
   useEffect(() => {
     if (isStarted === true) {
       setTimeout(() => {
         setIsCatch(true)
       }, 2000)
-      
-      switch (index) {
-        case 0:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-             setText(value[0].bomDia.slice(0, index + 1));
-             setIndex(1);
-          }, 2000)
-         
-          break;
-        case 1:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
-            setIndex(2);
-          }, 1000)
-          
-          break;
-        case 2:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
-            setIndex(4);
-          }, 1000)
-          break;
-        case 3:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
 
-            setIndex(4);
-          }, 1000)
-         
-          break;
-        case 4:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));           
-
-            setIndex(5);
-
-          }, 1000)
-          
-          break;
-         case 5:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));           
-
-            setIndex(6);
-
-          }, 1000)
-          
-          break;
-        case 6:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
-            setIndex(7);
-
-          }, 1000)
-          break;
-        case 7:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
-            setIndex(8);
-
-          }, 1000)
-          break;
-        case 8:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
-            setIndex(9);
-
-          }, 1000)
-          break;
-        case 9:
-          setTimeout(() => {
-            // setValue(value + 1) é assincrono ele acaba nao alterando varios 
-            setText(value[0].bomDia.slice(0, index + 1));
-            setIndex(10);
-
-          }, 1000)
-          break;
-      };
-      console.log('so observando')
+    if (text.length !== value[0].bomDia.length) {
+        soletrando(index);
     }
-  })
+      console.log(`${index}`)
+    return (() => soletrando(index));
+      
+    }
+  }, [isStarted, index])
 
   if (!isStarted) {
     return (

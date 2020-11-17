@@ -3,30 +3,49 @@ import { useFetch } from '../../9-custom-hooks/final/2-useFetch';
 
 const url = 'https://course-api.netlify.app/api/javascript-store-products';
 // every time props or state changes, component re-renders
+// const calculateMostExpensive = (data) => {
+//   console.log('hello ');
+//   return (
+//     data.reduce((total, item) => {
+//       const price = item.fields.price;
+//       if (price >= total) {
+//         total = price;
+//       }
+//       return total;
+//     }, 0) / 100
+//   );
+// };
 const calculateMostExpensive = (data) => {
-  console.log('hello ');
-  return (
-    data.reduce((total, item) => {
-      const price = item.fields.price;
-      if (price >= total) {
-        total = price;
-      }
-      return total;
-    }, 0) / 100
-  );
-};
+  console.log('hello')
+  return data.reduce((total, item) => {
+    const price = item.fields.price
+    if (price >= total) {
+      total = price;
+    }
+
+    return total
+  },0)/100
+} 
 const Index = () => {
   const { products } = useFetch(url);
   const [count, setCount] = useState(0);
   const [cart, setCart] = useState(0);
 
+  // const addToCart = useCallback(() => {
+  //   setCart(cart + 1);
+  // }, [cart]);
+
+  // const mostExpensive = useMemo(() => calculateMostExpensive(products), [
+  //   products,
+  // ]);
+
   const addToCart = useCallback(() => {
     setCart(cart + 1);
   }, [cart]);
 
-  const mostExpensive = useMemo(() => calculateMostExpensive(products), [
-    products,
-  ]);
+  const mostExpensive = useMemo(() => calculateMostExpensive(products)
+    , [products]);
+ 
 
   return (
     <>
