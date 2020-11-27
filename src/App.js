@@ -6,14 +6,16 @@ import React from 'react'
 //como fazer o useState
 import SetUp from './tutorial/12-memo-useMemo-useCallback/setup'
 import GoodMorning from './tutorial/goodmorning/2-bomdia'
-import AppNumero from './tutorial/react_with_d3/App3-Axes'
+import AppNumero from './tutorial/react_with_d3/app6/App6-responsive'
 
 function App() {
   return (
-    <div className='container'>
+    // <div className='container'>
+    //   {/* <SetUp /> */}
+    //   {/* <GoodMorning /> */}
+    // </div>
+    <div className='root'>
       <AppNumero />
-      {/* <SetUp /> */}
-      {/* <GoodMorning /> */}
     </div>
   )
 }
