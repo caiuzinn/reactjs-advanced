@@ -6,7 +6,8 @@ import React from 'react'
 //como fazer o useState
 import SetUp from './tutorial/12-memo-useMemo-useCallback/setup'
 import GoodMorning from './tutorial/goodmorning/2-bomdia'
-import AppNumero from './tutorial/react_with_d3/app6/App6-responsive'
+import AppNumero from './tutorial/react_with_d3/app8/App8-timeline'
+
 
 function App() {
   return (

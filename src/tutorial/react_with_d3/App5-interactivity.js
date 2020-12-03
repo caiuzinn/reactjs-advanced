@@ -36,6 +36,7 @@ const App = () => {
 
 
         const yAxis = axisRight(yScale);
+        
         svg
             .select('.y-axis')
             .style('transform', 'translateX(300px)')
